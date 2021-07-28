@@ -1,0 +1,19 @@
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change languages
+  new: New document
+  list: Documents list
+intro:
+  desc: Keep track of the papers you read
+  dynamic-route: Demo of dynamic route
+  hi: Hi, {name}!
+  whats-your-name: What's your name?
+not-found: Not found
+label:
+  title: Title
+  author: Author
+  abstract: Abstract
