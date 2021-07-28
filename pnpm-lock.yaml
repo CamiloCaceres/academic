@@ -40,6 +40,7 @@ specifiers:
   vue-i18n: ^9.1.7
   vue-router: ^4.0.10
   vue-tsc: ^0.2.2
+  workbox-window: ^6.1.5
 
 dependencies:
   '@tiptap/starter-kit': 2.0.0-beta.85
@@ -83,6 +84,7 @@ devDependencies:
   vite-plugin-vue-layouts: 0.3.1_vite@2.4.3
   vite-ssg: 0.12.0_1d0d13aa7c033bc766448569b3d878d0
   vue-tsc: 0.2.2_typescript@4.3.5
+  workbox-window: 6.1.5
 
 packages:
 
