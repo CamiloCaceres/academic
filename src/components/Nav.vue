@@ -7,7 +7,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <nav class="text-xl mb-6 flex justify-center items-center">
+  <nav class="text-xl mb-6 flex justify-center items-center sticky top-0">
     <button class="icon-btn mx-2 !outline-none" @click="router.push('/')">
       <icomoon-free:books class="inline-block" />
     </button>

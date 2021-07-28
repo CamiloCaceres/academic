@@ -15,9 +15,10 @@ const editor = useEditor({
   editorProps: {
     attributes: {
       class:
-        'm-5 focus:outline-none mx-auto text-left',
+        'm-5 focus:outline-none mx-auto text-left py-2 pl-2 text-lg ',
     },
   },
+  autofocus: true,
   onUpdate({ editor }) {
     wordCount.value = editor.state.doc.textContent.split(' ').length
     output.value = editor.getHTML()
@@ -27,7 +28,7 @@ const editor = useEditor({
 </script>
 
 <template>
-  <editor-content :editor="editor" class="border-l-2 border-gray-300 pl-2" />
+  <editor-content :editor="editor" class="border-l-2 border-gray-300  min-h-full" />
   <div class="text-right text-sm text-gray-600">
     {{ wordCount }} words
   </div>
