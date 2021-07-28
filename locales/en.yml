@@ -1,5 +1,4 @@
 button:
-  about: About
   back: Back
   go: GO
   home: Home
@@ -7,13 +6,12 @@ button:
   toggle_langs: Change languages
   new: New document
   list: Documents list
+  save: Save
 intro:
   desc: Keep track of the papers you read
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  whats-your-name: What's your name?
 not-found: Not found
-label:
+new:
+  header: Add document
   title: Title
   author: Author
   abstract: Abstract

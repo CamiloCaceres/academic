@@ -2,6 +2,7 @@
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import { createDocument } from '../db'
+import AbstractEditor from '~/components/NewDoc/AbstractEditor.vue'
 
 const { t } = useI18n()
 
@@ -41,23 +42,31 @@ Link para dl el articulo -->
 <template>
   <div>
     <h1 class="text-2xl mb-5">
-      new doc
+      {{ t('new.header') }}
     </h1>
     <div class="max-w-3xl text-left mx-auto">
       <InputLabel v-model="document.title">
-        {{ t('label.title') }}
-      </InputLabel>
-      <InputLabel v-model="document.author">
-        {{ t('label.author') }}
+        {{ t('new.title') }}
       </InputLabel>
 
+      <InputLabel v-model="document.author">
+        {{ t('new.author') }}
+      </InputLabel>
+
+      <!-- el abstract se escribe en un modal de pantalla completa?
+      aqui se muestra truncated solo el inicio pero se guarda completo en el v-modal -->
+      <AddFeature>
+        Add Abstract
+      </AddFeature>
+
       <p class="mt-5 text-gray-600 text-sm">
-        {{ t('label.abstract') }}
+        {{ t('new.abstract') }}
       </p>
-      <Editor v-model="document.abstract" class="cursor-text mt-4 ml-2" />
+      <AbstractEditor v-model="document.abstract" class="cursor-text mt-4 ml-2" />
     </div>
+
     <button class="btn mt-5" @click="saveDocument">
-      Send
+      {{ t('button.save') }}
     </button>
   </div>
 </template>

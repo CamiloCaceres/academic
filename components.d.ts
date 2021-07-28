@@ -3,6 +3,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Abstract: typeof import('./src/components/NewDoc/Abstract.vue')['default']
+    AbstractEditor: typeof import('./src/components/NewDoc/AbstractEditor.vue')['default']
+    AddFeature: typeof import('./src/components/atoms/AddFeature.vue')['default']
+    AddFeatureButton: typeof import('./src/components/atoms/AddFeatureButton.vue')['default']
     CarbonCampsite: typeof import('virtual:vite-icons/carbon/campsite')['default']
     CarbonDicomOverlay: typeof import('virtual:vite-icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('virtual:vite-icons/carbon/language')['default']
@@ -12,6 +16,7 @@ declare module 'vue' {
     CarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
     Editor: typeof import('./src/components/Editor.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    'Ic:outlineAddCircleOutline': typeof import('virtual:vite-icons/ic/outline-add-circle-outline')['default']
     'IcomoonFree:books': typeof import('virtual:vite-icons/icomoon-free/books')['default']
     InputLabel: typeof import('./src/components/atoms/InputLabel.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
