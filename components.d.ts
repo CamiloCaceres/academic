@@ -4,14 +4,10 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Abstract: typeof import('./src/components/NewDoc/Abstract.vue')['default']
-    AbstractEditor: typeof import('./src/components/NewDoc/AbstractEditor.vue')['default']
-    AddFeature: typeof import('./src/components/atoms/AddFeatureButton.vue')['default']
     AddFeatureButton: typeof import('./src/components/atoms/AddFeatureButton.vue')['default']
-    CarbonCampsite: typeof import('virtual:vite-icons/carbon/campsite')['default']
     CarbonDicomOverlay: typeof import('virtual:vite-icons/carbon/dicom-overlay')['default']
-    CarbonLanguage: typeof import('virtual:vite-icons/carbon/language')['default']
-    CarbonLogoGithub: typeof import('virtual:vite-icons/carbon/logo-github')['default']
     CarbonMoon: typeof import('virtual:vite-icons/carbon/moon')['default']
+    CarbonPedestrian: typeof import('virtual:vite-icons/carbon/pedestrian')['default']
     CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
     CarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
     Categories: typeof import('./src/components/NewDoc/Categories.vue')['default']
