@@ -2,24 +2,20 @@
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-const abstractContent = ref('')
-
 const open = ref(false)
 
 </script>
 
 <template>
   <div>
-    <!-- el abstract se escribe en un modal de pantalla completa?
-      aqui se muestra truncated solo el inicio pero se guarda completo en el v-modal -->
     <AddFeatureButton :open="open" @click="open = !open">
-      {{ t('new.abstract') }}
+      {{ t('new.review') }}
     </AddFeatureButton>
+
     <div v-show="open">
       <p class="mt-5 text-gray-600 text-sm">
-        {{ t('new.abstract') }}
+        {{ t('new.review') }}
       </p>
-      <Editor v-model="abstractContent" class="cursor-text mt-4 ml-2" />
     </div>
   </div>
 </template>

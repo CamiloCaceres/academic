@@ -15,3 +15,8 @@ new:
   title: Title
   author: Author
   abstract: Abstract
+  review: Review
+  categories: Categories
+  quotes: Quotes
+  reference: Reference information
+  notes: Notes

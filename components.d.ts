@@ -5,7 +5,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Abstract: typeof import('./src/components/NewDoc/Abstract.vue')['default']
     AbstractEditor: typeof import('./src/components/NewDoc/AbstractEditor.vue')['default']
-    AddFeature: typeof import('./src/components/atoms/AddFeature.vue')['default']
+    AddFeature: typeof import('./src/components/atoms/AddFeatureButton.vue')['default']
     AddFeatureButton: typeof import('./src/components/atoms/AddFeatureButton.vue')['default']
     CarbonCampsite: typeof import('virtual:vite-icons/carbon/campsite')['default']
     CarbonDicomOverlay: typeof import('virtual:vite-icons/carbon/dicom-overlay')['default']
@@ -14,13 +14,19 @@ declare module 'vue' {
     CarbonMoon: typeof import('virtual:vite-icons/carbon/moon')['default']
     CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
     CarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
+    Categories: typeof import('./src/components/NewDoc/Categories.vue')['default']
     Editor: typeof import('./src/components/Editor.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     'Ic:outlineAddCircleOutline': typeof import('virtual:vite-icons/ic/outline-add-circle-outline')['default']
+    'Ic:outlineRemoveCircleOutline': typeof import('virtual:vite-icons/ic/outline-remove-circle-outline')['default']
     'IcomoonFree:books': typeof import('virtual:vite-icons/icomoon-free/books')['default']
     InputLabel: typeof import('./src/components/atoms/InputLabel.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
+    Notes: typeof import('./src/components/NewDoc/Notes.vue')['default']
+    Quotes: typeof import('./src/components/NewDoc/Quotes.vue')['default']
     README: typeof import('./src/components/README.md')['default']
+    Reference: typeof import('./src/components/NewDoc/Reference.vue')['default']
+    Review: typeof import('./src/components/NewDoc/Review.vue')['default']
   }
 }
 

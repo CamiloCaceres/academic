@@ -1,12 +1,23 @@
 <script setup lang="ts">
 
+const props = defineProps({ open: Boolean })
+
 </script>
 
 <template>
-  <button class="flex items-center mt-5">
-    <ic:outline-add-circle-outline class="w-7 h-7 text-gray-400" />
-    <p class="text-sm text-gray-500 px-3">
-      <slot></slot>
-    </p>
+  <button class="mt-5">
+    <div v-if="!props.open" class="flex items-center ">
+      <ic:outline-add-circle-outline class="w-6 h-6 text-gray-500" />
+      <p class="text-xs text-gray-600 px-3">
+        Add <slot></slot>
+      </p>
+    </div>
+
+    <div v-if="props.open" class="flex items-center">
+      <ic:outline-remove-circle-outline class="w-6 h-6 text-red-500" />
+      <p class="text-xs text-red-600 px-3">
+        Remove <slot></slot>
+      </p>
+    </div>
   </button>
 </template>

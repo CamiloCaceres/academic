@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 
 const emit = defineEmits(['update:modelValue'])
-
+const vals = ref('')
 </script>
 
 <template>
+  {{ vals }}
   <div class="relative mt-5">
     <input
       id="title"
