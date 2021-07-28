@@ -91,8 +91,8 @@ const openModal = () => {
     <!-- Add truncated display. Div recieves html, parses with Tailwind Prose, truncates
         Add remove feature button
     -->
-    <div>
+    <!-- <div>
       {{ t('new.reference') }}
-    </div>
+    </div> -->
   </div>
 </template>
