@@ -29,6 +29,14 @@ const openModal = () => {
       {{ t('new.review') }}
     </AddFeatureButton>
 
+    <Modal>
+      <title>
+        {{ t('new.review') }}
+      </title>
+      <body>
+      </body>
+    </Modal>
+
     <TransitionRoot appear :show="isOpen" as="template">
       <Dialog as="div" @close="closeModal">
         <div class="fixed inset-0 z-40 overflow-y-auto">

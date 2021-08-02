@@ -79,8 +79,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Academic',
+        short_name: 'Academic',
         theme_color: '#ffffff',
         icons: [
           {

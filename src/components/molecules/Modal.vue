@@ -25,10 +25,6 @@ const openModal = () => {
 
 <template>
   <div>
-    <AddFeatureButton :is-open="isOpen" @click="openModal">
-      {{ t('new.review') }}
-    </AddFeatureButton>
-
     <TransitionRoot appear :show="isOpen" as="template">
       <Dialog as="div" @close="closeModal">
         <div class="fixed inset-0 z-40 overflow-y-auto">
@@ -65,11 +61,11 @@ const openModal = () => {
                   as="h3"
                   class="text-xl text-center font-medium leading-6 text-gray-900"
                 >
-                  Add {{ t('new.review') }}
+                  <slot name="title"></slot>
                 </DialogTitle>
                 <div class="mt-8">
                   <p class="text-sm text-gray-500">
-                    <Editor v-model="review" class="cursor-text mt-4 ml-2" />
+                    <slot name="body"></slot>
                   </p>
                 </div>
 
