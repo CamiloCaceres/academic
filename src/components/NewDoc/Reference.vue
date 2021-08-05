@@ -8,6 +8,10 @@ import {
   DialogTitle,
 } from '@headlessui/vue'
 
+import type { featureStateType } from '~/types'
+
+const featureState = ref<featureStateType>('empty')
+
 const { t } = useI18n()
 
 const isOpen = ref(false)
@@ -20,6 +24,7 @@ const openModal = () => {
 </script>
 
 <template>
+  {{ featureState }}
   <div>
     <!-- button -->
     <AddFeatureButton :is-open="isOpen" @click="openModal">

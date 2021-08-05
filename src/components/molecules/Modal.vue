@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import {
   TransitionRoot,
   TransitionChild,
@@ -8,25 +7,18 @@ import {
   DialogTitle,
 } from '@headlessui/vue'
 
-const { t } = useI18n()
-
-const review = ref('')
-
 // modal
-const isOpen = ref(false)
-const closeModal = () => {
-  isOpen.value = false
-}
-const openModal = () => {
-  isOpen.value = true
-}
+
+const props = defineProps({
+  featureState: String,
+})
 
 </script>
 
 <template>
   <div>
-    <TransitionRoot appear :show="isOpen" as="template">
-      <Dialog as="div" @close="closeModal">
+    <TransitionRoot appear :show="props.featureState === 'add'" as="template">
+      <Dialog as="div" @close="$emit('closeModal')">
         <div class="fixed inset-0 z-40 overflow-y-auto">
           <div class="min-h-screen px-4 text-center">
             <TransitionChild
@@ -61,11 +53,15 @@ const openModal = () => {
                   as="h3"
                   class="text-xl text-center font-medium leading-6 text-gray-900"
                 >
-                  <slot name="title"></slot>
+                  <slot name="title">
+                    Def tit
+                  </slot>
                 </DialogTitle>
                 <div class="mt-8">
                   <p class="text-sm text-gray-500">
-                    <slot name="body"></slot>
+                    <slot name="body">
+                      Default Bod
+                    </slot>
                   </p>
                 </div>
 
@@ -73,7 +69,7 @@ const openModal = () => {
                   <button
                     type="button"
                     class=" absolute bottom-3 right-3 inline-flex justify-center rounded-full p-1 text-sm font-medium text-teal-200 bg-teal-600 border border-transparent hover:bg-teal-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-teal-500"
-                    @click="closeModal"
+                    @click="$emit('closeModal')"
                   >
                     <ic:round-check class="h-8 w-8" />
                   </button>

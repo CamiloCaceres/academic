@@ -1,25 +1,49 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import type { featureStateType } from '~/types'
+
+const featureState = ref<featureStateType>('empty')
+
+const setState = (newState: featureStateType) => {
+  featureState.value = newState
+}
+const abstract = ref('')
+
+const deleteFeature = () => {
+  featureState.value = 'empty'
+  abstract.value = ''
+}
+
 const { t } = useI18n()
-
-const abstractContent = ref('')
-
-const open = ref(false)
 
 </script>
 
 <template>
   <div>
-    <!-- el abstract se escribe en un modal de pantalla completa?
-      aqui se muestra truncated solo el inicio pero se guarda completo en el v-modal -->
-    <AddFeatureButton :open="open" @click="open = !open">
+    <AddFeatureButton v-if="featureState == 'empty'" @click="setState('add')">
       {{ t('new.abstract') }}
     </AddFeatureButton>
-    <div v-show="open">
-      <p class="mt-5 text-gray-600 text-sm">
-        {{ t('new.abstract') }}
-      </p>
-      <Editor v-model="abstractContent" class="cursor-text mt-4 ml-2" />
+
+    <Modal :feature-state="featureState" @closeModal="setState('display')">
+      <template #title>
+        <h1>
+          {{ t('new.abstract') }}
+        </h1>
+      </template>
+      <template #body>
+        <Editor v-model="abstract" class="cursor-text mt-4 ml-2" />
+      </template>
+    </Modal>
+
+    <div v-if="featureState == 'display'">
+      <DisplayFeature @deleteFeature="deleteFeature">
+        <template #title>
+          {{ t('new.abstract') }}
+        </template>
+        <template #content>
+          <ReadOnlyEditor :content="abstract" />
+        </template>
+      </DisplayFeature>
     </div>
   </div>
 </template>

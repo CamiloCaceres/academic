@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.3.0",
+    "@tailwindcss/typography": "^0.4.1",
     "@tiptap/starter-kit": "^2.0.0-beta.85",
     "@tiptap/vue-3": "^2.0.0-beta.47",
     "@vueuse/core": "^5.2.0",
