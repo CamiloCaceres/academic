@@ -23,6 +23,7 @@ specifiers:
   markdown-it-link-attributes: ^3.0.0
   markdown-it-prism: ^2.1.8
   nprogress: ^0.2.0
+  pinia: ^2.0.0-beta.5
   pnpm: ^6.11.0
   postcss: ^8.3.6
   prism-theme-vars: ^0.2.2
@@ -53,6 +54,7 @@ dependencies:
   '@vueuse/head': 0.6.0_vue@3.1.5
   firebase: 8.8.0
   nprogress: 0.2.0
+  pinia: 2.0.0-beta.5_typescript@4.3.5
   prism-theme-vars: 0.2.2
   vue: 3.1.5
   vue-demi: 0.11.2_vue@3.1.5
@@ -5443,6 +5445,18 @@ packages:
     resolution: {integrity: sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=}
     engines: {node: '>=4'}
     dev: true
+
+  /pinia/2.0.0-beta.5_typescript@4.3.5:
+    resolution: {integrity: sha512-0XvufXNkEvl7Fk6wrg5DH/JYPihkoknet950SQNIlWxXpeI7omwR0H00QPIiEYkrdbsiHXJyvI2XndWGvD4v5A==}
+    peerDependencies:
+      typescript: ^4.3.5
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.15
+      typescript: 4.3.5
+    dev: false
 
   /pkg-dir/2.0.0:
     resolution: {integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=}

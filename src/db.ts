@@ -12,6 +12,10 @@ const config = {
 const firebaseApp = firebase.initializeApp(config)
 
 const db = firebaseApp.firestore()
+
+// Auth
+
+// Documents Collection
 const documentsCollection = db.collection('Documents')
 
 export const createDocument = (document: any) => {

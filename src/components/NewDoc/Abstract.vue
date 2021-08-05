@@ -1,18 +1,29 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import type { featureStateType } from '~/types'
+import { useNewDocStore } from '~/stores/newDoc'
 
+// Store
+const newDoc = useNewDocStore()
+
+const abstract = ref('')
+
+// Feature state
 const featureState = ref<featureStateType>('empty')
 
 const setState = (newState: featureStateType) => {
   featureState.value = newState
 }
-const abstract = ref('')
 
 const deleteFeature = () => {
   featureState.value = 'empty'
   abstract.value = ''
 }
+
+// Store logic
+watchEffect(() => {
+  newDoc.$patch({ abstract: abstract.value })
+})
 
 const { t } = useI18n()
 
