@@ -48,6 +48,7 @@ const handleSubmit = async(e: any) => {
     </form>
   </div>
 </template>
+
 <route lang="yaml">
 meta:
   requiresUnauth: true

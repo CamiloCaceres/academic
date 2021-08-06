@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import type { featureStateType } from '~/types'
-import { useNewDocStore } from '~/stores/newDoc'
+// import { useNewDocStore } from '~/stores/newDoc'
 
-// Store
-const newDoc = useNewDocStore()
+// // Store
+// const newDoc = useNewDocStore()
 
 const abstract = ref('')
 
@@ -21,9 +21,9 @@ const deleteFeature = () => {
 }
 
 // Store logic
-watchEffect(() => {
-  newDoc.$patch({ abstract: abstract.value })
-})
+// watchEffect(() => {
+//   newDoc.$patch({ abstract: abstract.value })
+// })
 
 const { t } = useI18n()
 

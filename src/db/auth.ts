@@ -1,8 +1,9 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { firebaseApp } from '.'
 
 export const getUserState = () =>
   new Promise((resolve, reject) =>
-    onAuthStateChanged(getAuth(), resolve, reject),
+    onAuthStateChanged(getAuth(firebaseApp), resolve, reject),
   )
 
 export const useAuthState = () => {
