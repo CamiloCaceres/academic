@@ -19,6 +19,8 @@ declare module 'vue' {
     'Ic:roundDeleteOutline': typeof import('virtual:vite-icons/ic/round-delete-outline')['default']
     'Ic:roundKeyboardArrowDown': typeof import('virtual:vite-icons/ic/round-keyboard-arrow-down')['default']
     'Ic:roundKeyboardArrowUp': typeof import('virtual:vite-icons/ic/round-keyboard-arrow-up')['default']
+    'Ic:roundLock': typeof import('virtual:vite-icons/ic/round-lock')['default']
+    'Ic:roundMailOutline': typeof import('virtual:vite-icons/ic/round-mail-outline')['default']
     'IcomoonFree:books': typeof import('virtual:vite-icons/icomoon-free/books')['default']
     InputLabel: typeof import('./src/components/atoms/InputLabel.vue')['default']
     Modal: typeof import('./src/components/molecules/Modal.vue')['default']

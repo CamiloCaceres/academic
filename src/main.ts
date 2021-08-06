@@ -6,6 +6,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import './styles/main.css'
+import { getUserState } from './db'
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -17,12 +18,22 @@ export const createApp = ViteSSG(
   (ctx) => {
     // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
+
+    // Pinia
     const pinia = createPinia()
     ctx.app.use(pinia)
+
+    // Router
+    ctx.router.beforeEach(async(to, from, next) => {
+      const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+      const requiresUnauth = to.matched.some(record => record.meta.requiresUnauth)
+
+      const isAuth = await getUserState()
+
+      if (requiresAuth && !isAuth) next('/login')
+      else if (requiresUnauth && isAuth) next('/')
+      else next()
+    })
   },
 
-  // (app) => {
-  //   const pinia = createPinia()
-  //   app.use(pinia)
-  // },
 )

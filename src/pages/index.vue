@@ -1,10 +1,25 @@
 <script setup lang="ts">
+import { getAuth, signOut } from 'firebase/auth'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useAuthState } from '~/db'
 
 const { t } = useI18n()
 
 const router = useRouter()
+
+const { user } = useAuthState()
+const auth = getAuth()
+
+const signOutUser = async() => {
+  try {
+    await signOut(auth)
+    router.push('/login')
+  }
+  catch (e) {
+    alert(e.message)
+  }
+}
 
 </script>
 
@@ -36,6 +51,13 @@ const router = useRouter()
       >
         {{ t('button.list') }}
       </button>
+      <h1>Welcome {{ user?.email }}!</h1>
+      <button
+        class="m-3 text-sm btn"
+        @click="signOutUser"
+      >
+        {{ t('button.signout') }}
+      </button>
     </div>
   </div>
 </template>
@@ -43,4 +65,5 @@ const router = useRouter()
 <route lang="yaml">
 meta:
   layout: home
-  </route>
+  requiresAuth: true
+</route>
