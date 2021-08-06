@@ -1,7 +1,10 @@
 {
-  "name" : "academic-repo",
+  "name": "academic-repo",
   "version": "0.0.1",
-  "author": {"name": "Camilo Caceres", "email": "camiloac97@gmail.com"},
+  "author": {
+    "name": "Camilo Caceres",
+    "email": "camiloac97@gmail.com"
+  },
   "private": true,
   "scripts": {
     "dev": "vite --port 3333 --open",
@@ -16,7 +19,7 @@
     "@tiptap/vue-3": "^2.0.0-beta.47",
     "@vueuse/core": "^5.2.0",
     "@vueuse/head": "^0.6.0",
-    "firebase": "^8.8.0",
+    "firebase": "^9.0.0-beta.8",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.0-beta.5",
     "prism-theme-vars": "^0.2.2",
