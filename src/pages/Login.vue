@@ -23,7 +23,7 @@ const handleSubmit = async(e: any) => {
     <h1 class="mb-4 text-3xl font-medium text-gray-600">
       Login
     </h1>
-    <form class="flex flex-col space-y-10" @submit.prevent="handleSubmit">
+    <form class="flex flex-col space-y-10" @submit.prevent>
       <div class="relative w-full">
         <input class="peer input w-full pl-8" name="email" placeholder="email" type="email" />
         <ic:round-mail-outline class="input-icon" />
@@ -35,7 +35,7 @@ const handleSubmit = async(e: any) => {
       </div>
 
       <div class="flex flex-col space-y-1">
-        <button class="btn" type="submit">
+        <button class="btn" @click="handleSubmit">
           Login
         </button>
         <p class="text-gray-500">
