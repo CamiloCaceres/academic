@@ -5,10 +5,14 @@ import { useRouter } from 'vue-router'
 const auth = getAuth()
 const router = useRouter()
 
+const user = reactive({
+  email: '',
+  password: '',
+})
+
 const handleSubmit = async(e: any) => {
-  const { email, password } = e.target.elements
   try {
-    await signInWithEmailAndPassword(auth, email.value, password.value)
+    await signInWithEmailAndPassword(auth, user.email, user.password)
     router.push('/')
   }
   catch (e) {
@@ -25,12 +29,12 @@ const handleSubmit = async(e: any) => {
     </h1>
     <form class="flex flex-col space-y-10" @submit.prevent>
       <div class="relative w-full">
-        <input class="peer input w-full pl-8" name="email" placeholder="email" type="email" />
+        <input v-model="user.email" class="peer input w-full pl-8" name="email" placeholder="email" type="email" />
         <ic:round-mail-outline class="input-icon" />
       </div>
 
       <div class="relative w-full">
-        <input class="peer input w-full pl-8" name="password" placeholder="password" type="password" />
+        <input v-model="user.password" class="peer input w-full pl-8" name="password" placeholder="password" type="password" />
         <ic:round-lock class="input-icon" />
       </div>
 
