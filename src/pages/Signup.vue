@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'vue-router'
 
 const auth = getAuth()
@@ -8,7 +8,7 @@ const router = useRouter()
 const handleSubmit = async(e: any) => {
   const { email, password } = e.target.elements
   try {
-    await signInWithEmailAndPassword(auth, email.value, password.value)
+    await createUserWithEmailAndPassword(auth, email.value, password.value)
     router.push('/')
   }
   catch (e) {
@@ -21,7 +21,7 @@ const handleSubmit = async(e: any) => {
 <template>
   <div class="px-4 py-10 md:px-10 rounded-2xl shadow-xl w-full md:max-w-md mx-auto">
     <h1 class="mb-4 text-3xl font-medium text-gray-600">
-      Login
+      Sign Up
     </h1>
     <form class="flex flex-col space-y-10" @submit.prevent="handleSubmit">
       <div class="relative w-full">
@@ -36,19 +36,20 @@ const handleSubmit = async(e: any) => {
 
       <div class="flex flex-col space-y-1">
         <button class="btn" type="submit">
-          Login
+          Sign Up
         </button>
         <p class="text-gray-500">
           or
         </p>
-        <button class="btn-secondary" @click="router.push('/signup')">
-          Sign Up
+        <button class="btn-secondary" @click="router.push('/login')">
+          Login
         </button>
       </div>
     </form>
   </div>
 </template>
-<route lang="yaml">
+
+    <route lang="yaml">
 meta:
   requiresUnauth: true
-</route>
+    </route>

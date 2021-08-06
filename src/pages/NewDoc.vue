@@ -44,13 +44,8 @@ Link para dl el articulo -->
       {{ t('new.header') }}
     </h1>
     <div class="max-w-3xl text-left mx-auto">
-      <InputLabel v-model="document.title">
-        {{ t('new.title') }}
-      </InputLabel>
-
-      <InputLabel v-model="document.author">
-        {{ t('new.author') }}
-      </InputLabel>
+      <input v-model="document.title" class="input w-full my-2" name="title" :placeholder="t('new.title')" type="email" />
+      <input v-model="document.author" class="input w-full my-2" name="author" :placeholder="t('new.author')" type="email" />
 
       <Abstract />
 

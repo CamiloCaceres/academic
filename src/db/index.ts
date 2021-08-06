@@ -17,3 +17,4 @@ export const documentsCollection = collection(db, 'Documents')
 export * from './documentsCollection'
 
 // Auth
+export * from './auth'

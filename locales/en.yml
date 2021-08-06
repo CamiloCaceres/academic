@@ -7,6 +7,8 @@ button:
   new: New document
   list: Documents list
   save: Save
+  login: Login
+  signout: Sign out
 intro:
   desc: Keep track of the papers you read
 not-found: Not found
