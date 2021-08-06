@@ -20,6 +20,21 @@ const handleSubmit = async(e: any) => {
     alert(e.message)
   }
 }
+// Password input field Hide/Show logic
+const passField = ref()
+
+const showPassword = ref(false)
+
+const togglePasswordVisibility = () => {
+  if (passField.value.type === 'password') {
+    passField.value.type = 'text'
+    showPassword.value = true
+  }
+  else {
+    passField.value.type = 'password'
+    showPassword.value = false
+  }
+}
 </script>
 
 <template>
@@ -34,8 +49,17 @@ const handleSubmit = async(e: any) => {
       </div>
 
       <div class="relative w-full">
-        <input v-model="user.password" class="peer input w-full pl-8" name="password" placeholder="password" type="password" />
-        <ic:round-lock class="input-icon" />
+        <input
+          ref="passField"
+          v-model="user.password"
+          class="peer input w-full pl-8"
+          name="password"
+          placeholder="password"
+          type="password"
+        />
+        <ic:round-lock class="input-icon left-1 peer-focus:text-blue-500 " />
+        <ic:sharp-visibility v-show="!showPassword" class="input-icon right-0 hover:text-blue-500 transition-all cursor-pointer" @click="togglePasswordVisibility" />
+        <ic:sharp-visibility-off v-show="showPassword" class="input-icon right-0 hover:text-blue-500 transition-all cursor-pointer" @click="togglePasswordVisibility" />
       </div>
 
       <div class="flex flex-col space-y-1">

@@ -19,6 +19,8 @@ declare module 'vue' {
     'Ic:roundKeyboardArrowUp': typeof import('virtual:vite-icons/ic/round-keyboard-arrow-up')['default']
     'Ic:roundLock': typeof import('virtual:vite-icons/ic/round-lock')['default']
     'Ic:roundMailOutline': typeof import('virtual:vite-icons/ic/round-mail-outline')['default']
+    'Ic:sharpVisibility': typeof import('virtual:vite-icons/ic/sharp-visibility')['default']
+    'Ic:sharpVisibilityOff': typeof import('virtual:vite-icons/ic/sharp-visibility-off')['default']
     'IcomoonFree:books': typeof import('virtual:vite-icons/icomoon-free/books')['default']
     InputLabel: typeof import('./src/components/atoms/InputLabel.vue')['default']
     Modal: typeof import('./src/components/molecules/Modal.vue')['default']
