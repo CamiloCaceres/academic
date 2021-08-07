@@ -9,6 +9,7 @@ button:
   save: Save
   login: Login
   signout: Sign out
+  profile: Manage Profile
 intro:
   desc: Keep track of the papers you read
 not-found: Not found

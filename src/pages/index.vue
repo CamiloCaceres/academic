@@ -2,19 +2,19 @@
 import { getAuth, signOut } from 'firebase/auth'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { useAuthState } from '~/db'
 
 const { t } = useI18n()
 
 const router = useRouter()
 
-const { user } = useAuthState()
 const auth = getAuth()
+
+const user = auth.currentUser
 
 const signOutUser = async() => {
   try {
     await signOut(auth)
-    router.push('/login')
+    router.push('/auth')
   }
   catch (e) {
     alert(e.message)
@@ -34,6 +34,7 @@ const signOutUser = async() => {
     <p>
       <em class="text-sm opacity-75">{{ t('intro.desc') }}</em>
     </p>
+    <p>Welcome {{ user?.displayName }}</p>
 
     <div class="py-4" />
 
@@ -57,6 +58,12 @@ const signOutUser = async() => {
         @click="signOutUser"
       >
         {{ t('button.signout') }}
+      </button>
+      <button
+        class="m-3 text-sm btn"
+        @click="router.push('/auth/Manageprofile')"
+      >
+        {{ t('button.profile') }}
       </button>
     </div>
   </div>

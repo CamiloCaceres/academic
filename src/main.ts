@@ -29,7 +29,7 @@ export const createApp = ViteSSG(
         const requiresUnauth = to.matched.some(record => record.meta.requiresUnauth)
         const isAuth = await getUserState()
 
-        if (requiresAuth && !isAuth) next('/login')
+        if (requiresAuth && !isAuth) next('/auth')
         else if (requiresUnauth && isAuth) next('/')
         else next()
       })
