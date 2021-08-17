@@ -16,7 +16,7 @@ useHead({
 </script>
 
 <template>
-  <main class="px-4 h-screen text-center text-gray-700 dark:text-gray-200 dark:bg-gray-800">
+  <main class=" h-screen text-center text-gray-700 dark:text-gray-200 dark:bg-gray-800">
     <client-only>
       <router-view />
     </client-only>
