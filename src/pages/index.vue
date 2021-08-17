@@ -1,24 +1,17 @@
 <script setup lang="ts">
-import { getAuth, signOut } from 'firebase/auth'
-import { useRouter } from 'vue-router'
+import { getAuth } from 'firebase/auth'
 import { useI18n } from 'vue-i18n'
+import { usersPapersCollection, createPaper } from '~/db'
 
 const { t } = useI18n()
-
-const router = useRouter()
 
 const auth = getAuth()
 
 const user = auth.currentUser
 
-const signOutUser = async() => {
-  try {
-    await signOut(auth)
-    router.push('/auth')
-  }
-  catch (e) {
-    alert(e.message)
-  }
+const testAdd = () => {
+  const papersCollection = usersPapersCollection(user?.uid)
+  createPaper(papersCollection, { test: 'test1' })
 }
 
 </script>
@@ -36,34 +29,12 @@ const signOutUser = async() => {
     </p>
     <p>Welcome {{ user?.displayName }}</p>
 
-    <div class="py-4" />
-
     <div>
       <button
         class="m-3 text-sm btn"
-        @click="router.push('/newdoc')"
+        @click="testAdd"
       >
-        {{ t('button.new') }}
-      </button>
-
-      <button
-        class="m-3 text-sm btn"
-        @click="router.push('/doclist')"
-      >
-        {{ t('button.list') }}
-      </button>
-      <h1>Welcome {{ user?.email }}!</h1>
-      <button
-        class="m-3 text-sm btn"
-        @click="signOutUser"
-      >
-        {{ t('button.signout') }}
-      </button>
-      <button
-        class="m-3 text-sm btn"
-        @click="router.push('/auth/Manageprofile')"
-      >
-        {{ t('button.profile') }}
+        Test add
       </button>
     </div>
   </div>

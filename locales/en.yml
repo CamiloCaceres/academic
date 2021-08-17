@@ -1,15 +1,16 @@
+hello: Hello
 button:
   back: Back
   go: GO
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
-  new: New document
-  list: Documents list
+  new: Add paper
+  list: My papers
   save: Save
   login: Login
   signout: Sign out
-  profile: Manage Profile
+  profile: View Profile
 intro:
   desc: Keep track of the papers you read
 not-found: Not found

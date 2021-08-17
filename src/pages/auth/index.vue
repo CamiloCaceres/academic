@@ -27,5 +27,6 @@ const router = useRouter()
 
     <route lang="yaml">
 meta:
+  layout: auth
   requiresUnauth: true
     </route>

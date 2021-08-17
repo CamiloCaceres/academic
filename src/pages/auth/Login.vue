@@ -10,8 +10,8 @@ const user = reactive({
   password: '',
 })
 const rules = {
-  email: { required, email }, // Matches state.firstName
-  password: { required }, // Matches state.lastName
+  email: { required, email },
+  password: { required },
 
 }
 const v$ = useVuelidate(rules, user)
@@ -108,5 +108,6 @@ const togglePasswordVisibility = () => {
 
 <route lang="yaml">
 meta:
+  layout: auth
   requiresUnauth: true
 </route>

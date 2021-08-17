@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, collection } from 'firebase/firestore'
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
 
 export const firebaseApp = initializeApp({
   apiKey: 'AIzaSyDYe4PJQAob2V9cKawDYIyN2ZGJ83r1aFU',
@@ -10,11 +10,22 @@ export const firebaseApp = initializeApp({
   appId: '1:1003961640744:web:d3f1ebdf29a7f7a248d21d',
 })
 
-const db = getFirestore(firebaseApp)
+export const db = getFirestore(firebaseApp)
 
 // Document Collection
 export const documentsCollection = collection(db, 'Documents')
 export * from './documentsCollection'
 
+// Users Collection
+export const usersCollection = collection(db, 'Users')
+
+export const usersPapersCollection = (id: any) => {
+  return collection(db, `Users/${id}/papers`)
+}
+
+// creates papers collection by adding a document
+export const createPaper = (collection: any, document: any) => {
+  return addDoc(collection, { document })
+}
 // Auth
 export * from './auth'
