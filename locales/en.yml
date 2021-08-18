@@ -11,16 +11,18 @@ button:
   login: Login
   signout: Sign out
   profile: View Profile
+  add: Add
 intro:
   desc: Keep track of the papers you read
 not-found: Not found
 new:
-  header: Add document
+  header: New Paper
   title: Title
   author: Author
   abstract: Abstract
   review: Review
   categories: Categories
   quotes: Quotes
-  reference: Reference information
+  reference: Citation
   notes: Notes
+  url: URL to document

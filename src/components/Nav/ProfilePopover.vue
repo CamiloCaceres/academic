@@ -4,19 +4,24 @@ import { getAuth, signOut } from 'firebase/auth'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useUserStore } from '~/stores/userStore'
+
+const userStore = useUserStore()
 
 const { t } = useI18n()
 const auth = getAuth()
 const router = useRouter()
 
-const name = auth.currentUser?.displayName
+const name = ref(auth.currentUser?.displayName)
 
 const signOutUser = async() => {
   try {
     await signOut(auth)
+    userStore.resetUser()
     router.push('/auth')
   }
   catch (e) {
+    // eslint-disable-next-line no-alert
     alert(e.message)
   }
 }

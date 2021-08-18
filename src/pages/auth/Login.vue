@@ -68,7 +68,7 @@ const togglePasswordVisibility = () => {
           @blur="v$.email.$touch"
         />
 
-        <ic:round-mail-outline class="input-icon" />
+        <ic:round-mail-outline class="input-icon left-1 peer-focus:text-blue-500" />
       </div>
       <div v-if="v$.email.$error" class="text-red-400">
         Please enter a valid email

@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { getAuth } from 'firebase/auth'
 import { useI18n } from 'vue-i18n'
 import { usersPapersCollection, createPaper } from '~/db'
+import { useUserStore } from '~/stores/userStore'
 
 const { t } = useI18n()
 
-const auth = getAuth()
-
-const user = auth.currentUser
+const user = useUserStore()
 
 const testAdd = () => {
-  const papersCollection = usersPapersCollection(user?.uid)
+  const papersCollection = usersPapersCollection(user.uid)
   createPaper(papersCollection, { test: 'test1' })
 }
 
@@ -27,7 +25,8 @@ const testAdd = () => {
     <p>
       <em class="text-sm opacity-75">{{ t('intro.desc') }}</em>
     </p>
-    <p>Welcome {{ user?.displayName }}</p>
+    <p>Welcome {{ user.name }}</p>
+    <p>{{ user.email }}</p>
 
     <div>
       <button

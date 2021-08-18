@@ -7,6 +7,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import { getUserState } from '~/db'
 import './styles/main.css'
+import { useUserStore } from '~/stores/userStore'
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -22,6 +23,20 @@ export const createApp = ViteSSG(
     // Pinia
     const pinia = createPinia()
     ctx.app.use(pinia)
+
+    if (import.meta.env.SSR)
+      ctx.initialState.pinia = pinia.state.value
+
+    else
+      pinia.state.value = ctx.initialState.pinia || {}
+
+    ctx.router.beforeEach(async(to, from, next) => {
+      const store = useUserStore(pinia)
+      if (await getUserState())
+        // perform the (user-implemented) store action to fill the store's state
+        store.setUser()
+      next()
+    })
 
     if (ctx.isClient) {
       ctx.router.beforeEach(async(to, from, next) => {
