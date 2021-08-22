@@ -29,9 +29,9 @@ const signOutUser = async() => {
 </script>
 
 <template>
-  <Popover class="relative">
+  <Popover class="relative z-20">
     <PopoverButton>
-      <ic:round-person class="h-10 w-10 p-1 rounded-full bg-blue-300 text-blue-100" />
+      <ic:round-menu class="" />
     </PopoverButton>
 
     <transition
@@ -43,23 +43,36 @@ const signOutUser = async() => {
       leave-to-class="translate-y-1 opacity-0"
     >
       <PopoverPanel
-        class="absolute z-10 w-52 mt-5  bg-white right-1/2 sm:px-0 "
+        class="absolute z-30 w-52 -right-2 sm:px-0 "
       >
         <div
-          class="overflow-hidden text-left rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 "
+          class="bg-white z-50 overflow-hidden text-left rounded-lg shadow-lg border-2 border-blue-300/50 "
         >
           <div class="w-full text-lg font-medium py-3 px-3 ">
             {{ t('hello') }}, {{ name }}
           </div>
           <div
-            class="w-full text-base cursor-pointer py-2 px-5 hover:bg-gray-200"
+            class="w-full text-base pt-2 pb-3 px-5 border-t border-blue-300/50"
+            @click="router.push('/doclist')"
+          >
+            {{ t('button.list') }}
+          </div>
+          <div
+            v-if="!router.currentRoute.value.path.includes('/add-paper')"
+            class="w-full text-base pt-2 pb-3 px-5 border-t border-blue-300/50"
+            @click="router.push('/add-paper')"
+          >
+            {{ t('button.new') }}
+          </div>
+          <div
+            class="w-full text-base cursor-pointer py-2 px-5 border-t border-blue-300/50"
             @click="router.push('/auth/Manageprofile')"
           >
             {{ t('button.profile') }}
           </div>
 
           <div
-            class="w-full text-base cursor-pointer pt-2 pb-3 px-5 hover:bg-gray-200"
+            class="text-red-400 w-full text-base pt-2 pb-3 px-5 border-t border-blue-300/50"
             @click="signOutUser"
           >
             {{ t('button.signout') }}

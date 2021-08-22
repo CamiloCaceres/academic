@@ -5,8 +5,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Abstract: typeof import('./src/components/NewDoc/Abstract.vue')['default']
     AddFeatureButton: typeof import('./src/components/atoms/AddFeatureButton.vue')['default']
-    CarbonMoon: typeof import('virtual:vite-icons/carbon/moon')['default']
-    CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
     CarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
     Categories: typeof import('./src/components/NewDoc/Categories.vue')['default']
     DisplayFeature: typeof import('./src/components/molecules/DisplayFeature.vue')['default']
@@ -27,15 +25,16 @@ declare module 'vue' {
     'Ic:sharpVisibilityOff': typeof import('virtual:vite-icons/ic/sharp-visibility-off')['default']
     'IcomoonFree:books': typeof import('virtual:vite-icons/icomoon-free/books')['default']
     InputLabel: typeof import('./src/components/atoms/InputLabel.vue')['default']
+    MobileHamburgerMenu: typeof import('./src/components/Nav/MobileHamburgerMenu.vue')['default']
     Modal: typeof import('./src/components/molecules/Modal.vue')['default']
     Nav: typeof import('./src/components/Nav/Nav.vue')['default']
     Notes: typeof import('./src/components/NewDoc/Notes.vue')['default']
     ProfilePopover: typeof import('./src/components/Nav/ProfilePopover.vue')['default']
     Quotes: typeof import('./src/components/NewDoc/Quotes.vue')['default']
-    README: typeof import('./src/components/README.md')['default']
     ReadOnlyEditor: typeof import('./src/components/molecules/ReadOnlyEditor.vue')['default']
     Reference: typeof import('./src/components/NewDoc/Reference.vue')['default']
     Review: typeof import('./src/components/NewDoc/Review.vue')['default']
+    Tabs: typeof import('./src/components/NewDoc/Tabs.vue')['default']
   }
 }
 

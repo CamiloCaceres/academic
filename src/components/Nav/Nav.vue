@@ -20,8 +20,18 @@ const router = useRouter()
       </p>
     </div>
     <!-- Mobile Hamburguer menu -->
-    <ic:round-menu class="md:hidden" />
+    <mobile-hamburger-menu class="md:hidden" />
     <!-- Web Menu -->
+
+    <!-- TEMP -->
+    <!-- <button
+      class="px-3 py-1.5 rounded-md bg-blue-600 text-white cursor-pointer hover:bg-blue-700/95 transition-all"
+      @click="router.push('/newdoc')"
+    >
+      {{ t('button.new') }}
+    </button> -->
+    <!-- TEMP -->
+
     <div class="hidden md:flex space-x-8 items-center">
       <button
         class="px-3 py-1.5 rounded-md text-blue-600 font-medium hover:bg-blue-400/80 hover:text-gray-100 transition-all"
@@ -30,8 +40,9 @@ const router = useRouter()
         {{ t('button.list') }}
       </button>
       <button
+        v-if="!router.currentRoute.value.path.includes('/add-paper')"
         class="px-3 py-1.5 rounded-md bg-blue-600 text-white cursor-pointer hover:bg-blue-700/95 transition-all"
-        @click="router.push('/newdoc')"
+        @click="router.push('/add-paper')"
       >
         {{ t('button.new') }}
       </button>
