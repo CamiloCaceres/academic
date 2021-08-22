@@ -20,7 +20,7 @@ const router = useRouter()
       </p>
     </div>
     <!-- Mobile Hamburguer menu -->
-    <ic:round-menu class="md:hidden" />
+    <mobile-hamburger-menu class="md:hidden" />
     <!-- Web Menu -->
 
     <!-- TEMP -->

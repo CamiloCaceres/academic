@@ -13,6 +13,8 @@ button:
   profile: View Profile
   add: Add
 intro:
+  academic: Academic
+  welcome: Welcome {name}!
   desc: Keep track of the papers you read
 not-found: Not found
 new:

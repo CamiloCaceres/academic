@@ -20,12 +20,13 @@ const testAdd = () => {
       <icomoon-free:books class="inline-block" />
     </p>
     <p>
-      Academic
+      {{ t('intro.academic') }}
     </p>
-    <p>
-      <em class="text-sm opacity-75">{{ t('intro.desc') }}</em>
-    </p>
-    <p>Welcome {{ user.name }}</p>
+
+    <!-- <p class="text-sm z-0 opacity-75">
+      {{ t('intro.desc') }}
+    </p> -->
+    <p>{{ t('intro.welcome', {name:user.name}) }}</p>
     <p>{{ user.email }}</p>
 
     <div>

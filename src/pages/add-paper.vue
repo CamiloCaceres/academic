@@ -28,14 +28,6 @@ const paper = reactive({
   url: '',
 })
 
-const addPaper = () => {
-  const papersCollection = usersPapersCollection(user.uid)
-  createPaper(papersCollection, paper).then((doc) => {
-    paperStore.initialize(user.uid, doc.id)
-    router.push(`/papers/${doc.id}`)
-  })
-}
-
 // Validation
 const rules = computed(() => ({
   author: { required },
@@ -48,6 +40,17 @@ const rules = computed(() => ({
 }))
 
 const v = useVuelidate(rules, paper)
+
+const addPaper = () => {
+  v.value.$touch()
+  if (!v.value.$error) {
+    const papersCollection = usersPapersCollection(user.uid)
+    createPaper(papersCollection, paper).then((doc) => {
+      paperStore.initialize(user.uid, doc.id)
+      router.push(`/papers/${doc.id}`)
+    })
+  }
+}
 
 </script>
 

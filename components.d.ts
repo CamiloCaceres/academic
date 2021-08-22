@@ -25,6 +25,7 @@ declare module 'vue' {
     'Ic:sharpVisibilityOff': typeof import('virtual:vite-icons/ic/sharp-visibility-off')['default']
     'IcomoonFree:books': typeof import('virtual:vite-icons/icomoon-free/books')['default']
     InputLabel: typeof import('./src/components/atoms/InputLabel.vue')['default']
+    MobileHamburgerMenu: typeof import('./src/components/Nav/MobileHamburgerMenu.vue')['default']
     Modal: typeof import('./src/components/molecules/Modal.vue')['default']
     Nav: typeof import('./src/components/Nav/Nav.vue')['default']
     Notes: typeof import('./src/components/NewDoc/Notes.vue')['default']
